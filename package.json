@@ -4,13 +4,16 @@
     "description": "Front-end for my Databases class MVP.",
     "source": "src/index.html",
     "scripts": {
-        "start": "parcel",
-        "build": "parcel build"
+        "start": "parcel serve -p 5000 --public-url / --dist-dir dist",
+        "build": "parcel build --dist-dir public"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
         "parcel": "^2.10.3"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.10.3"
     }
 }

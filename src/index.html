@@ -1,15 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello! This is a test for parcel proxy!</h1> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script>
+        <script src="https://kit.fontawesome.com/51a9d021a9.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="scss/landing.scss">
 
-    </script>
-</body>
+        <title>Los Santos customs</title>
+    </head>
+    <body>
+        <div class="main__container">
+
+            
+            <div class="header">
+                <nav>
+                    <div class="nav__left">
+                        <div class="logo"><a href="."><img src="./assets/Los_Santos_Customs_logo.webp" alt="Los Santos custom logo"></a></div>
+                        <ul>
+                            <li><a href=".">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Catalogue</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav__right">
+                        <div class="register__button">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            Register
+                        </div>
+                        <div class="login__button">
+                            <i class="fa-solid fa-user"></i>
+                            Login
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="hero">
+                <div id="front-car">
+                    <img src="./assets/hero-car.jpg" alt="Showcase car">
+                </div>
+
+                <div class="text">
+                    <div class="qualities">
+                        <ul>
+                            <li>Modern cars</li>
+                            <div class="line vertical"></div>
+                            <li>High speed</li>
+                            <div class="line horizontal"></div>
+                            <li>Best prices</li>
+                            <div class="line horizontal"></div>
+                            <li>Luxury cars</li>
+                        </ul>
+                    </div>
+
+                    <div class="slogan">
+                        <p>Your Ultimate</p>
+                        <p>Destination for Quality</p>
+                    </div>
+
+                    <div class="analytics">
+                        <div class="customers">
+                            <p class="number">12.2k</p>
+                            <p class="label">Customers</p>
+                        </div>
+                        <div class="models">
+                            <p class="number">40k</p>
+                            <p class="label">Models</p>
+                        </div>
+                        <div class="branches">
+                            <p class="number">20.4k</p>
+                            <p class="label">Branches</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upcoming-cars">
+                    <h2>Upcoming cars</h2>
+
+                    <div class="car"><img src="./assets/upcoming-car-1.jpg" alt=""></div>
+                    <div class="car"><img src="./assets/upcoming-car-2.jpg" alt=""></div>
+                    <div class="car"><img src="./assets/upcoming-car-3.jpg" alt=""></div>
+                </div>
+
+                <div id="video-box">
+                    <video src="./assets/video-box.mp4" controls autoplay loop></video> 
+                    <p>
+                        Buckle up for a fusion of power, elegance
+                        and cutting-edge technology.
+                        Stay tuned for an experience that redefines
+                        the road ahead.
+                    </p>
+                </div>
+            </div>
+
+            <div class="about"></div>
+            <div class="contact"></div>
+            <div class="footer"></div>
+
+        </div> 
+    </body>
 </html>
