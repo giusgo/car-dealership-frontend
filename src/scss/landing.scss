@@ -11,8 +11,9 @@
 }
 
 @import "./header";
-@import "./hero";
 @import "./line_decorators";
+@import "./hero";
+@import "./about";
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -21,6 +22,12 @@ body {
     .main__container {
         width: 100vw;
         overflow: hidden;
+
+        hr {
+            width: 70%;
+            border: 1px solid white;
+            margin: 60px auto;
+        }
 
     }
 }
