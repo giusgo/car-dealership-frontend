@@ -1,0 +1,83 @@
+body {
+    .main__container {
+
+        // Footer
+        .footer {
+            width: 70%;
+            margin: auto;
+
+            .info__container {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 100px;
+
+                .logo {
+                    width: 20%;
+                    img {
+                        display: block;
+                        margin: auto;
+                        height: 120px;
+                    }
+                }
+
+                .navigation {
+                    width: 10%;
+
+                    ul {
+                        list-style: none;
+                        li {
+                            color: white;
+                            margin-bottom: 30px;
+                            a {
+                                text-decoration: none;
+                                color: white;
+                            }
+
+                            &:nth-child(1) {
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+
+                .socials {
+                    width: 20%;
+
+                    p {
+                        text-align: left;
+                        color: white;
+                        font-weight: bold;
+                    }
+
+                    .social-links {
+                        margin: 20px 0;
+
+                        a {
+                            text-decoration: none;
+                            margin-right: 20px;
+                            i {
+                                color: white;
+                                font-size: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer__styled__hr {
+                width: 70%;
+                border: 1px solid #353535;
+                margin-bottom: 20px;
+            }
+
+            .copyright__notice {
+                text-align: center;
+                font-size: 16px;
+                color: white;
+                margin-bottom: 20px;
+            }
+        }
+
+    }
+}
