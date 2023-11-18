@@ -55,88 +55,108 @@ body {
 
                 .nav__right {
 
-                    height: 100%;
+                    .loggedout {
 
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
+                        height: 100%;
 
-                    .register__button {
-                        padding: 0 20px;
-                        height: 50%;
+                        display: none;
+                        flex-direction: row;
+                        align-items: center;
 
-                        background-color: white;
+                        .button {
+                            padding: 0 20px;
+                            height: 50%;
+                            margin-left: 20px;
 
-                        color: black;
-                        font-size: 18px;
-                        text-align: center;
-                        line-height: 40px;
+                            background-color: white;
 
-                        border: 2px solid black;
-
-                        cursor: pointer;
-
-                        transition: ease .3s;
-
-                        i {
                             color: black;
-                            font-size: 20px;
-                            margin-right: 5px;
+                            font-size: 18px;
+                            text-align: center;
+                            line-height: 40px;
+
+                            border: 2px solid black;
+
+                            cursor: pointer;
 
                             transition: ease .3s;
-                        }
-
-                        &:hover {
-                            background-color: black;
-
-                            color: white;
 
                             i {
-                                color: white;
+                                color: black;
+                                font-size: 20px;
+                                margin-right: 5px;
+
+                                transition: ease .3s;
                             }
+
+                            &:hover {
+                                background-color: black;
+
+                                color: white;
+
+                                i {
+                                    color: white;
+                                }
+                            }
+                        }
+
+                        &.active {
+                            display: flex;
                         }
                     }
 
-                    .login__button {
-                        padding: 0 20px;
-                        height: 50%;
+                    .loggedin {
+                        height: 100%;
 
-                        margin-left: 20px;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
 
-                        background-color: white;
+                        .button {
+                            padding: 0 20px;
+                            height: 50%;
+                            margin-left: 20px;
 
-                        color: black;
-                        font-size: 18px;
-                        text-align: center;
-                        line-height: 40px;
-
-                        border: 2px solid black;
-
-                        cursor: pointer;
-
-                        transition: ease .3s;
-
-                        i {
-                            color: black;
-                            font-size: 20px;
-                            margin-right: 5px;
-
-                            transition: ease .3s;
-                        }
-
-                        &:hover {
                             background-color: black;
 
                             color: white;
+                            font-size: 18px;
+                            text-align: center;
+                            line-height: 40px;
+
+                            border: 2px solid white;
+
+                            cursor: pointer;
+
+                            transition: ease .3s;
 
                             i {
                                 color: white;
+                                font-size: 20px;
+                                margin-right: 5px;
+
+                                transition: ease .3s;
+                            }
+
+                            &:hover {
+                                background-color: white;
+
+                                color: black;
+
+                                i {
+                                    color: black;
+                                }
                             }
                         }
-                    }
 
+                        &.active {
+                            display: flex;
+                        }
+
+                    }
 
                 }
+
             }
         }
 

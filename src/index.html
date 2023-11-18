@@ -33,14 +33,30 @@
                         </ul>
                     </div>
                     <div class="nav__right">
-                        <div class="register__button">
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                            Register
+                        <!-- When not logged in -->
+                        <div class="loggedout">
+                            <div class="register__button button">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Register
+                            </div>
+                            <div class="login__button button">
+                                <i class="fa-solid fa-user"></i>
+                                Login
+                            </div>
                         </div>
-                        <div class="login__button">
-                            <i class="fa-solid fa-user"></i>
-                            Login
+
+                        <!-- When logged in -->
+                        <div class="loggedin">
+                            <div class="profile__button button">
+                                <i class="fa-solid fa-user"></i>
+                                My profile
+                            </div>
+                            <div class="logout__button button">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Logout
+                            </div>
                         </div>
+
                     </div>
                 </nav>
             </div>
