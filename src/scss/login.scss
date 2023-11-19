@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --foreground-bg: #6268B1;
+}
+
+@import "./header";
+@import "./line_decorators";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+
+    .main__container {
+        width: 100vw;
+        overflow: hidden;
+
+        // Login
+        .login {
+
+            margin: auto;
+            margin-top: 50px;
+            width: 70%;
+
+            h1 {
+                color: var(--foreground-bg);
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .form {
+                width: 50%;
+                margin: auto;
+                margin-top: 60px;
+
+                .column {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    .field {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        margin-bottom: 10px;
+
+                        label {
+                            color: white;
+                            font-size: 16px;
+                            font-weight: 700;
+                            margin-bottom: 10px;
+                        }
+
+                        input {
+                            width: 100%;
+                            height: 40px;
+                            background: none;
+                            outline: none;
+                            border: 2px solid white;
+                            border-radius: 5px;
+                            color: white;
+                            padding-left: 10px;
+                            font-family: 'Montserrat', sans-serif;
+                            font-size: 16px;
+                            transition: ease .3s;
+
+                            &:focus {
+                                border: 2px solid var(--foreground-bg);
+                            }
+                        }
+
+                        p {
+                            color: red;
+                            font-size: 14px;
+                            font-weight: 700;
+                            margin-top: 5px;
+                        }
+
+
+                    }
+                }
+
+                #login__button {
+                    width: 150px;
+                    padding: 20px 0;
+                    text-align: center;
+                    font-weight: 700;
+                    margin: auto;
+                    margin-top: 20px;
+                    color: white;
+                    background-color: var(--foreground-bg);
+                    cursor: pointer;
+                    transition: ease .3s;
+                    border-radius: 5px;
+
+                    &:hover {
+                        background-color: white;
+                        color: var(--foreground-bg);
+                    }
+                }
+
+            }
+
+        }
+
+    }
+}
