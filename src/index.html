@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <script src="https://kit.fontawesome.com/51a9d021a9.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
         <link rel="stylesheet" href="scss/landing.scss">
         <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 
@@ -40,7 +42,7 @@
                     </div>
                     <div class="nav__right">
                         <!-- When not logged in -->
-                        <div class="loggedout">
+                        <div class="loggedout" id="loggedout__buttons">
                             <div class="button" id="register__button">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 Register
@@ -52,7 +54,7 @@
                         </div>
 
                         <!-- When logged in -->
-                        <div class="loggedin">
+                        <div class="loggedin" id="loggedin__buttons">
                             <div class="button" id="profile__button">
                                 <i class="fa-solid fa-user"></i>
                                 My profile
@@ -239,5 +241,7 @@
             </div>
 
         </div> 
+
+        <script src="./js/landing.js"></script>
     </body>
 </html>
