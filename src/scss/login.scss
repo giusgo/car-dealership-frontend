@@ -86,7 +86,8 @@ body {
                     }
                 }
 
-                #login__button {
+                #send__login {
+                    user-select: none;
                     width: 150px;
                     padding: 20px 0;
                     text-align: center;

@@ -203,7 +203,8 @@ body {
                 }
             }
 
-            #register__button {
+            #send__register {
+                user-select: none;
                 width: 150px;
                 padding: 20px 0;
                 text-align: center;
