@@ -59,7 +59,7 @@ body {
 
                         height: 100%;
 
-                        display: none;
+                        display: flex;
                         flex-direction: row;
                         align-items: center;
 
@@ -108,7 +108,7 @@ body {
                     .loggedin {
                         height: 100%;
 
-                        display: flex;
+                        display: none;
                         flex-direction: row;
                         align-items: center;
 

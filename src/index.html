@@ -10,6 +10,11 @@
         <title>Los Santos Customs</title>
     </head>
     <body>
+        <!-- Hidden ref to another pages -->
+        <div id="hidden__refs">
+            <a href="./register.html"></a>
+        </div>
+
         <div class="main__container">
 
             <div class="line__decorator left">
@@ -20,7 +25,7 @@
                 <div class="line"></div>
                 <p>Los Santos custom</p>
             </div>
-            
+
             <div class="header">
                 <nav>
                     <div class="nav__left">
@@ -35,11 +40,11 @@
                     <div class="nav__right">
                         <!-- When not logged in -->
                         <div class="loggedout">
-                            <div class="register__button button">
+                            <div class="button" id="register__button">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 Register
                             </div>
-                            <div class="login__button button">
+                            <div class="button" id="login__button">
                                 <i class="fa-solid fa-user"></i>
                                 Login
                             </div>
@@ -47,15 +52,16 @@
 
                         <!-- When logged in -->
                         <div class="loggedin">
-                            <div class="profile__button button">
+                            <div class="button" id="profile__button">
                                 <i class="fa-solid fa-user"></i>
                                 My profile
                             </div>
-                            <div class="logout__button button">
+                            <div class="button" id="logout__button">
                                 <i class="fa-solid fa-right-to-bracket"></i>
                                 Logout
                             </div>
                         </div>
+
 
                     </div>
                 </nav>
@@ -111,10 +117,10 @@
                 <div id="video-box">
                     <video src="./assets/video-box.mp4" controls autoplay loop></video> 
                     <p>
-                        Buckle up for a fusion of power, elegance
-                        and cutting-edge technology.
-                        Stay tuned for an experience that redefines
-                        the road ahead.
+                    Buckle up for a fusion of power, elegance
+                    and cutting-edge technology.
+                    Stay tuned for an experience that redefines
+                    the road ahead.
                     </p>
                 </div>
             </div>

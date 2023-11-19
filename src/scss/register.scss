@@ -12,27 +12,26 @@
 
 @import "./header";
 @import "./line_decorators";
-@import "./hero";
-@import "./about";
-@import "./contact";
-@import "./footer";
 
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #000;
 
-    #hidden__refs { display: none; }
-
     .main__container {
         width: 100vw;
         overflow: hidden;
 
-        hr {
-            width: 70%;
-            border: 1px solid white;
-            margin: 60px auto;
+        // Register
+
+        .register {
+                
+
+            h1 {
+                color: var(--foreground-bg);
+                font-size: 30px;
+                text-align: center;
+            }
         }
-        
 
     }
 }

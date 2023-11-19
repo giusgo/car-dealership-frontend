@@ -3,11 +3,151 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://kit.fontawesome.com/51a9d021a9.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="scss/register.scss">
+
         <title>Register | Los Santos Customs</title>
+
     </head>
     <body>
-        
-        
+        <div class="main__container">
 
+            <div class="line__decorator left">
+                <p>Los Santos custom</p>
+                <div class="line"></div>
+            </div>
+            <div class="line__decorator right">
+                <div class="line"></div>
+                <p>Los Santos custom</p>
+            </div>
+
+            <div class="header">
+                <nav>
+                    <div class="nav__left">
+                        <div class="logo"><a href="."><img src="./assets/Los_Santos_Customs_logo.webp" alt="Los Santos custom logo"></a></div>
+                        <ul>
+                            <li><a href=".">Home</a></li>
+                            <li><a href="#">About us</a></li>
+                            <li><a href="#">Catalogue</a></li>
+                            <li><a href="#">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav__right">
+                        <!-- When not logged in -->
+                        <div class="loggedout">
+                            <div class="button" id="register__button">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Register
+                            </div>
+                            <div class="button" id="login__button">
+                                <i class="fa-solid fa-user"></i>
+                                Login
+                            </div>
+                        </div>
+
+                        <!-- When logged in -->
+                        <div class="loggedin">
+                            <div class="button" id="profile__button">
+                                <i class="fa-solid fa-user"></i>
+                                My profile
+                            </div>
+                            <div class="button" id="logout__button">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Logout
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+
+            <div class="register">
+
+                <h1>Create your account</h1>
+
+                <section class="person__details">
+                    <div class="titlebox">
+                        <div class="line"></div>
+                        <div class="title">
+                            <h2>Enter your details here</h2>
+                        </div>
+                    </div>
+
+                    <div class="form">
+                        <div class="field">
+                            <label for="first__name">First name</label>
+                            <input type="text" name="first__name" id="first__name">
+                        </div>
+
+                        <div class="field">
+                            <label for="last__name">Last name</label>
+                            <input type="text" name="lane__name" id="last__name">
+                        </div>
+
+                        <div class="field">
+                            <label for="email">E-mail</label>
+                            <input type="text" name="email" id="email">
+                        </div>
+
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <input type="text" name="password" id="password">
+                        </div>
+
+                        <div class="field">
+                            <label for="phone">Phone number</label>
+                            <input type="text" name="phone" id="phone">
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="payment__details">
+                    <div class="titlebox">
+                        <div class="line"></div>
+                        <div class="title">
+                            <h2>Enter your payment here</h2>
+                        </div>
+                    </div>
+
+                    <div class="payment__method">
+                        <p>Debit/Credit card</p>
+                        <i class="fa-brands fa-cc-visa"></i>
+                        <i class="fa-brands fa-cc-mastercard"></i>
+                        <i class="fa-brands fa-cc-amex"></i>
+                    </div>
+
+                    <div class="form">
+                        <div class="field">
+                            <label for="card__type">Card type</label>
+                            <input type="text" name="card__type" id="card__type">
+                        </div>
+
+                        <div class="field">
+                            <label for="card__number">Card number</label>
+                            <input type="text" name="card__number" id="card__number">
+                        </div>
+
+                        <div class="field">
+                            <label for="expiration__month">Expiration month</label>
+                            <select name="expiration__month" id="expiration__month">
+                                <option value="None">None</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="expiration__year">Expiration year</label>
+                            <select name="expiration__year" id="expiration__year"></select>
+                        </div>
+                    </div>
+                </section>
+
+
+                <div id="register__button">Register</div>
+
+            </div>
+
+        </div>
     </body>
 </html>
