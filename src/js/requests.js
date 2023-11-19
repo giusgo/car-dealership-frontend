@@ -1,16 +1,18 @@
+import axios from "axios";
 
 export function sendRegisterForm(email, password) {
+    
 
-    const base_url = '/api/user-auth/login';
-    const parameters =`?email=${email}&password=${password}`
-    fetch(base_url+parameters)
+    axios.post('/api/user-auth/login', {
+        email: email,
+        password: password
+    })
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Bad network response');
-            }
-            return response.json();
+            // Handle the response from the API
+            console.log('API Response:', response.data);
         })
-        .then(data => {
-            console.log(data);
-        });
+        .catch(error => {
+            // Handle errors
+            console.error('Error during Axios request:', error);
+        }); 
 }
