@@ -17,7 +17,7 @@ const FORM = {
 }
 
 function collectInfo() {
-    
+
     // Load info fields from form
     const info = {};
 
@@ -30,6 +30,89 @@ function collectInfo() {
     return JSON.stringify(info);
 }
 
+function setupFields() {
+
+    // For phone number field
+    FORM.cellphone.on('keypress', function(e) {
+        // Allow only numbers
+        if (e.which < 48 || e.which > 57) {
+            e.preventDefault();
+        }
+
+        // Get the current value of the input
+        let inputValue = $(this).val();
+
+        // If the maximum length is reached, prevent further input
+        if (inputValue.length >= 12) {
+            e.preventDefault();
+        }
+
+        // Format the input value
+        if (inputValue.length === 3 || inputValue.length === 7) {
+            inputValue += ' ';
+        }
+
+        // Update the input field with the formatted value
+        $(this).val(inputValue);
+
+    });
+
+    // For card number field
+    FORM.cardNumber.on('keypress', function(e) {
+        // Allow only numbers
+        if (e.which < 48 || e.which > 57) {
+            e.preventDefault();
+        }
+
+        // Get the current value of the input
+        let inputValue = $(this).val();
+
+        // If the maximum length is reached, prevent further input
+        if (inputValue.length >= 19) {
+            e.preventDefault();
+        }
+
+        // Format the input value
+        if (inputValue.length === 4 || inputValue.length === 9 || inputValue.length === 14 ) {
+            inputValue += ' ';
+        }
+
+        // Update the input field with the formatted value
+        $(this).val(inputValue);
+    });
+
+    // For card type
+    const options = ['Visa', 'Mastercard', 'American Express'];
+
+    for (let i = 0; i < options.length; i++) {
+        var option = $('<option>', {
+            value: options[i],
+            text: options[i]
+        });
+        FORM.cardType.append(option);
+    }
+
+    // For expiration month
+    for (let i = 1; i <= 12; i++) {
+        var option = $('<option>', {
+            value: i,
+            text: i
+        });
+        FORM.expirationMonth.append(option); 
+    }
+
+    // For expiration month
+    var currentYear = new Date().getFullYear();
+    for (let i = 1; i <= 8; i++) {
+        var option = $('<option>', {
+            value: i + currentYear,
+            text: i + currentYear
+        });
+        FORM.expirationYear.append(option); 
+    }
+
+}
+
 function validateField(field, regex_expression = /^.*$/, error_message = '') {
 
     // Reset error message every validation
@@ -37,6 +120,12 @@ function validateField(field, regex_expression = /^.*$/, error_message = '') {
     error_field.empty();
 
     var fieldValue = field.val();
+
+    // Strip blank spaces from string if it is phone number or credit card
+    if (field == FORM.cellphone || field == FORM.cardNumber) {
+        fieldValue = fieldValue.replace(/\s/g, '');
+    }
+
     let regex = regex_expression;
 
     var validation = regex.test(fieldValue);
@@ -54,7 +143,7 @@ function validateField(field, regex_expression = /^.*$/, error_message = '') {
 }
 
 function validateAllFields() {
-    
+
     const conditions = [
         validateField(FORM.name, /^[A-Za-z]+$/, 'First name should only contain letters'),
         validateField(FORM.lastName, /^[A-Za-z]+$/, 'Last name should only contain letters'),
@@ -89,6 +178,9 @@ $(document).ready(function(){
 
     // Add redirection to buttons on the page
     addRedirectionToButtons();
+
+    // Setup all fields to work properly
+    setupFields();
 
     // Activate register button 
     const send_register = $('#send__register');
