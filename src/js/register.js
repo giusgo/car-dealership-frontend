@@ -30,7 +30,7 @@ function collectInfo() {
     return JSON.stringify(info);
 }
 
-function validateField(field, regex_expression, error_message) {
+function validateField(field, regex_expression = /^.*$/, error_message = '') {
 
     // Reset error message every validation
     var error_field = $(`#${field.attr('id').concat('__error')}`);
@@ -56,7 +56,15 @@ function validateField(field, regex_expression, error_message) {
 function validateAllFields() {
     
     const conditions = [
-        validateField(FORM.name, /^[A-Za-z]+$/, 'First name should only contain letters')
+        validateField(FORM.name, /^[A-Za-z]+$/, 'First name should only contain letters'),
+        validateField(FORM.lastName, /^[A-Za-z]+$/, 'Last name should only contain letters'),
+        validateField(FORM.email, /^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'E-mail not valid'),
+        validateField(FORM.password, /^.{8,100}$/, 'Password should be at least 8 and max. 100 characters long'),
+        validateField(FORM.cellphone, /^\d{10}$/, 'Phone number should be 10 digits long'),
+        validateField(FORM.cardType),
+        validateField(FORM.expirationMonth),
+        validateField(FORM.expirationYear),
+        validateField(FORM.cardNumber, /^\d{16}$/, 'Card number not valid')
     ]
 
     // Validate if every validation is true
