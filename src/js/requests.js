@@ -1,18 +1,13 @@
 import axios from "axios";
 
-export function sendRegisterForm(email, password) {
-    
+export async function sendRegisterForm(packedInfo) {
 
-    axios.post('/api/user-auth/login', {
-        email: email,
-        password: password
-    })
+    const url = '/api/user-auth/register';
+
+    axios.post(url, packedInfo)
         .then(response => {
-            // Handle the response from the API
-            console.log('API Response:', response.data);
+            return response.data;
         })
-        .catch(error => {
-            // Handle errors
-            console.error('Error during Axios request:', error);
-        }); 
+        .catch(error => {throw error});
+
 }
