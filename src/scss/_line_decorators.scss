@@ -17,7 +17,9 @@ body {
                 p {
                     color: white;
                     font-size: 12px;
-                    writing-mode: sideways-lr;
+                    // writing-mode: sideways-lr;
+                    writing-mode: vertical-lr;
+                    transform: rotate(180deg);
                 }
 
                 .line {
@@ -41,7 +43,8 @@ body {
                 p {
                     color: white;
                     font-size: 12px;
-                    writing-mode: sideways-rl;
+                    // writing-mode: sideways-rl;
+                    writing-mode: vertical-lr;
                 }
 
                 .line {
