@@ -1,7 +1,8 @@
 import toastr from "./toastrConfig";
 import { redirectTo, addRedirectionToButtons } from "./redirect";
 import { sendRegisterForm } from "./requests";
-import { createCookie } from "./cookie";
+import { cookieExists, createCookie } from "./cookie";
+import {setHeaderButtons} from "./loginController";
 
 const FORM = {
     // Person details
@@ -201,6 +202,13 @@ async function sendRegisterFormWrapper() {
 
 $(document).ready(function(){
 
+    // Check if cookie exists (if user is logged in)
+    if ( cookieExists() ) {
+        redirectTo.home();
+    }
+
+    // Set header buttons
+    setHeaderButtons();
     // Add redirection to buttons on the page
     addRedirectionToButtons();
 

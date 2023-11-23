@@ -1,11 +1,14 @@
+import {addLogoutButton, setHeaderButtons} from "./loginController";
 import { addRedirectionToButtons } from "./redirect";
 
 $(document).ready(function(){
 
-    // Header button groups 
-    const loggedout_buttons = $('#loggedout__buttons'),
-        loggedin_buttons = $('#loggedin__buttons');
+    // Add buttons depending on session status
+    setHeaderButtons();
 
     // Add redirection to buttons on the page
     addRedirectionToButtons(); 
+
+    // Add logout button function
+    addLogoutButton();
 });
