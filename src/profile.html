@@ -70,116 +70,116 @@
 
                 <h1>My profile</h1>
 
-                
 
-                <div class="column">
-                    <div class="img">
-                        <img src="./assets/profile-img-placeholder.jpg" alt="">
-                        <h2 id="person-name">John Doe</h2>
-                        <p id="person-role">Client</p>
-                    </div>
-                </div>
-
-                <div class="column">
-
-                    <div class="person__details">
-                        <p class="instructions">Edit your personal info:</p>
-                        <div class="form">
-                            <div class="column">
-
-                                <div class="field">
-                                    <label for="first__name">First name</label>
-                                    <input type="text" name="first__name" id="first__name" placeholder="">
-                                    <p id="first__name__error"></p>
-                                </div>
-
-                                <div class="field">
-                                    <label for="email">E-mail</label>
-                                    <input type="text" name="email" id="email" placeholder="">
-                                    <p id="email__error"></p>
-                                </div>
-
-                                <div class="field">
-                                    <label for="phone">Phone number</label>
-                                    <input type="phone" name="phone" id="phone" placeholder="">
-                                    <p id="phone__error"></p>
-                                </div>
-
-                            </div>
-
-                            <div class="column">
-
-                                <div class="field">
-                                    <label for="last__name">Last name</label>
-                                    <input type="text" name="last__name" id="last__name" placeholder="">
-                                    <p id="last__name__error"></p>
-                                </div>
-
-                                <div class="field">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password">
-                                    <p id="password__error"></p>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div id="send__person__details">
-                            Update
+                <div class="row">
+                    <div class="column profile__card">
+                        <div class="img">
+                            <img src="./assets/profile-img-placeholder.jpg" alt="">
+                            <h2 id="person-name">John Doe</h2>
+                            <p id="person-role">Client</p>
                         </div>
                     </div>
 
-                    <div class="payment__details">
+                    <div class="column details">
 
-                        <p class="instructions">Edit your payment info:</p>
-                        <p class="disclaimer">Previous card information is not available to see due to privacy concerns</p>
-                        <div class="form">
-                            <div class="column">
-                                <div class="field">
-                                    <label for="card__type">Card type</label>
-                                    <select name="card__type" id="card__type">
-                                        <option value="">None</option>
-                                    </select>
-                                    <p id="card__type__error"></p>
+                        <div class="person__details">
+                            <p class="instructions">Edit your personal info:</p>
+                            <div class="form">
+                                <div class="column">
+
+                                    <div class="field">
+                                        <label for="first__name">First name</label>
+                                        <input type="text" name="first__name" id="first__name" placeholder="">
+                                        <p id="first__name__error"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="email">E-mail</label>
+                                        <input type="text" name="email" id="email" placeholder="">
+                                        <p id="email__error"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="phone">Phone number</label>
+                                        <input type="phone" name="phone" id="phone" placeholder="">
+                                        <p id="phone__error"></p>
+                                    </div>
+
                                 </div>
 
-                                <div class="field">
-                                    <label for="expiration__month">Expiration month</label>
-                                    <select name="expiration__month" id="expiration__month">
-                                        <option value="">None</option>
-                                    </select>
-                                    <p id="expiration__month__error"></p>
-                                </div>
+                                <div class="column">
 
+                                    <div class="field">
+                                        <label for="last__name">Last name</label>
+                                        <input type="text" name="last__name" id="last__name" placeholder="">
+                                        <p id="last__name__error"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="password">Password</label>
+                                        <input type="password" name="password" id="password">
+                                        <p id="password__error"></p>
+                                    </div>
+
+                                </div>
                             </div>
 
-                            <div class="column">
-                                <div class="field">
-                                    <label for="card__number">Card number</label>
-                                    <input type="payment" name="card__number" id="card__number" placeholder="XXXX XXXX XXXX XXXX">
-
-                                    <p id="card__number__error"></p>
-                                </div>
-
-                                <div class="field">
-                                    <label for="expiration__year">Expiration year</label>
-                                    <select name="expiration__year" id="expiration__year">
-                                        <option value="">None</option>
-                                    </select>
-                                    <p id="expiration__year__error"></p>
-                                </div>
+                            <div id="send__person__details">
+                                Update
                             </div>
                         </div>
 
-                        <div id="send__payment__details">
-                            Update
-                        </div>
+                        <div class="payment__details">
 
+                            <p class="instructions">Edit your payment info:</p>
+                            <p class="disclaimer">Previous card information is not available to see due to privacy concerns</p>
+                            <div class="form">
+                                <div class="column">
+                                    <div class="field">
+                                        <label for="card__type">Card type</label>
+                                        <select name="card__type" id="card__type">
+                                            <option value="">None</option>
+                                        </select>
+                                        <p id="card__type__error"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="expiration__month">Expiration month</label>
+                                        <select name="expiration__month" id="expiration__month">
+                                            <option value="">None</option>
+                                        </select>
+                                        <p id="expiration__month__error"></p>
+                                    </div>
+
+                                </div>
+
+                                <div class="column">
+                                    <div class="field">
+                                        <label for="card__number">Card number</label>
+                                        <input type="payment" name="card__number" id="card__number" placeholder="XXXX XXXX XXXX XXXX">
+
+                                        <p id="card__number__error"></p>
+                                    </div>
+
+                                    <div class="field">
+                                        <label for="expiration__year">Expiration year</label>
+                                        <select name="expiration__year" id="expiration__year">
+                                            <option value="">None</option>
+                                        </select>
+                                        <p id="expiration__year__error"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="send__payment__details">
+                                Update
+                            </div>
+
+                        </div>
                     </div>
                 </div>
 
             </div>
-
 
         </div>
 
