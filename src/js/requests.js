@@ -11,3 +11,15 @@ export async function sendRegisterForm(packedInfo) {
         .catch(error => {throw error});
 
 }
+
+export async function sendLoginForm(packedInfo) {
+
+    const url = '/api/user-auth/login';
+
+    return axios.post(url, packedInfo)
+        .then(response => {
+            return response.data;
+        })
+        .catch(error => {throw error});
+
+}
