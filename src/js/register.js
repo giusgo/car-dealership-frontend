@@ -1,5 +1,7 @@
-import { addRedirectionToButtons } from "./redirect";
+import toastr from "./toastrConfig";
+import { redirectTo, addRedirectionToButtons } from "./redirect";
 import { sendRegisterForm } from "./requests";
+import { createCookie } from "./cookie";
 
 const FORM = {
     // Person details
@@ -180,9 +182,21 @@ async function sendRegisterFormWrapper() {
 
     var packedInfo = collectInfo();
 
-    const data = await sendRegisterForm(packedInfo);
-    console.log(data);
+    var response = await sendRegisterForm(packedInfo);
 
+    // If register was not valid
+    if (response.status != 200) {
+        toastr.warning(response.message);
+        return;
+    }
+    
+    // If register was a success
+    toastr.success(response.message);
+
+    // Get userID, create a cookie and redirect to home page
+    var userID = response.user;
+    createCookie(userID);
+    setTimeout(redirectTo.home, 1000);
 }
 
 $(document).ready(function(){
