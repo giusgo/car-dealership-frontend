@@ -1,7 +1,8 @@
-import {cookieExists} from "./cookie";
+import {cookieExists, createCookie} from "./cookie";
 import {setHeaderButtons} from "./loginController";
-import { addRedirectionToButtons } from "./redirect";
+import { redirectTo, addRedirectionToButtons } from "./redirect";
 import {sendLoginForm} from "./requests";
+import toastr from "./toastrConfig";
 
 const FORM = {
     // Login details
@@ -70,7 +71,19 @@ async function sendLoginFormWrapper() {
     var packedInfo = collectInfo();
 
     var response = await sendLoginForm(packedInfo);
-    console.log(response);
+
+    if (response.status != 200) {
+        toastr.warning(response.message);
+        return;
+    }
+
+    // If login was a success
+    toastr.success(response.message);
+
+    // Get userID, create a cookie and redirect to home page
+    var userID = response.user;
+    createCookie(userID);
+    setTimeout(redirectTo.home, 1000);
 }
 
 $(document).ready(function(){
