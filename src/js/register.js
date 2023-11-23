@@ -27,7 +27,15 @@ function collectInfo() {
         }
     } 
 
-    return JSON.stringify(info);
+    // Strip blank spaces from string
+    info.cellphone = info.cellphone.replace(/\s/g, '');
+    info.cardNumber = info.cardNumber.replace(/\s/g, '');
+
+    // Fix types
+    info.expirationYear = parseInt(info.expirationYear);
+    info.expirationMonth = parseInt(info.expirationMonth);
+
+    return info;
 }
 
 function setupFields() {
@@ -133,6 +141,7 @@ function validateField(field, regex_expression = /^.*$/, error_message = '') {
     // If empty
     if (!fieldValue) {
         error_field.text('This field should not be empty');
+        return false;
     }
     // If not, but not valid
     else if (!validation) {
@@ -169,8 +178,10 @@ async function sendRegisterFormWrapper() {
         return;
     }
 
-    //var packedInfo = collectInfo();
-    //const data = await sendRegisterForm(packedInfo);
+    var packedInfo = collectInfo();
+
+    const data = await sendRegisterForm(packedInfo);
+    console.log(data);
 
 }
 

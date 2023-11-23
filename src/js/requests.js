@@ -4,7 +4,7 @@ export async function sendRegisterForm(packedInfo) {
 
     const url = '/api/user-auth/register';
 
-    axios.post(url, packedInfo)
+    return axios.post(url, packedInfo)
         .then(response => {
             return response.data;
         })
