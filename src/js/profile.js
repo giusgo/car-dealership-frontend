@@ -1,7 +1,8 @@
 import {cookieExists, getCookie} from "./cookie";
 import {addLogoutButton, setHeaderButtons} from "./loginController";
 import {addRedirectionToButtons, redirectTo} from "./redirect";
-import {getPersonInfo} from "./requests";
+import {getPersonInfo, sendUpdatePayment, sendUpdatePerson} from "./requests";
+import toastr from "./toastrConfig";
 
 const FORM = {
 
@@ -24,6 +25,48 @@ const FORM = {
 
 }
 
+const collectInfoFrom ={
+    PERSON: function() {
+        const info = {};
+
+        // Add userID
+        info.personID = getCookie();
+
+        for (const key in FORM.PERSON) {
+            if (FORM.PERSON.hasOwnProperty(key)) {
+                info[key] = FORM.PERSON[key].val();
+            }
+        } 
+
+        // Strip blank spaces from string
+        info.cellphone = info.cellphone.replace(/\s/g, '');
+
+        return info;
+    },
+    PAYMENT: function() {
+        const info = {};
+
+        // Add userID
+        info.personID = getCookie();
+
+        for (const key in FORM.PAYMENT) {
+            if (FORM.PAYMENT.hasOwnProperty(key)) {
+                info[key] = FORM.PAYMENT[key].val();
+            }
+        } 
+
+        // Strip blank spaces from string
+        info.cardNumber = info.cardNumber.replace(/\s/g, '');
+
+        // Fix types
+        info.expirationYear = parseInt(info.expirationYear);
+        info.expirationMonth = parseInt(info.expirationMonth);
+
+        return info;
+
+    }
+}
+
 async function setCurrentData() {
 
     // Get cookie for current session
@@ -36,15 +79,14 @@ async function setCurrentData() {
     const name_on_card = $('#person-name');
     name_on_card.text(`${response.name} ${response.lastName}`);
 
-    // Change role
-    const role_on_card = $('#person-role');
-    role_on_card.text(response.personType);
-
     // Fill form placeholders
     FORM.PERSON.name.attr('placeholder', response.name);
     FORM.PERSON.lastName.attr('placeholder', response.lastName);
     FORM.PERSON.email.attr('placeholder', response.email);
-    FORM.PERSON.cellphone.attr('placeholder', response.cellphone);
+
+    var cellphone = response.cellphone,
+        formatted_cellphone = cellphone.slice(0, 3) + " " + cellphone.slice(3, 6) + " " + cellphone.slice(6);
+    FORM.PERSON.cellphone.attr('placeholder', formatted_cellphone);
 
 }
 
@@ -198,6 +240,47 @@ async function updatePersonFormWrapper() {
     if ( !validateAllFieldsOf.PERSON() ) {
         return;
     }
+
+    var packedInfo = collectInfoFrom.PERSON();
+
+    var response = await sendUpdatePerson(packedInfo);
+
+    // If update was not valid
+    if (response.status != 200) {
+        toastr.warning(response.message);
+        return;
+    }
+
+    // If register was a success
+    toastr.success(response.message);
+
+    // Reload page
+    setTimeout(redirectTo.profile, 1000);
+
+}
+
+async function updatePaymentFormWrapper() {
+    
+    // Don't send anything if something is not valid
+    if ( !validateAllFieldsOf.PAYMENT() ) {
+        return;
+    }
+
+    var packedInfo = collectInfoFrom.PAYMENT();
+
+    var response = await sendUpdatePayment(packedInfo);
+
+    // If update was not valid
+    if (response.status != 200) {
+        toastr.warning(response.message);
+        return;
+    }
+
+    // If register was a success
+    toastr.success(response.message);
+
+    // Reload page
+    setTimeout(redirectTo.profile, 1000);
 
 }
 

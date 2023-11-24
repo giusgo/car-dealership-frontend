@@ -12,11 +12,11 @@ export async function sendRegisterForm(packedInfo) {
 
 }
 
-export async function sendLoginForm(packedinfo) {
+export async function sendLoginForm(packedInfo) {
 
     const url = '/api/user-auth/login';
 
-    return axios.post(url, packedinfo)
+    return axios.post(url, packedInfo)
         .then(response => {
             return response.data;
         })
@@ -27,22 +27,20 @@ export async function sendLoginForm(packedinfo) {
 export async function getPersonInfo(userID) {
 
     const url = '/api/user-info/get-client-info';
+    const urlWithParams = url + `?personID=${userID}`;
 
-    var formattedUserID = { personID: userID };
-
-    return axios.get(url, formattedUserID)
+    return fetch(urlWithParams)
         .then(response => {
-            return response.data;
+            return response.json();
         })
-        .catch(error => {throw error});
 
 }
 
-export async function sendUpdatePerson(packedinfo) {
+export async function sendUpdatePerson(packedInfo) {
 
-    const url = '/api/user/update-client-info';
+    const url = '/api/user-info/update-client-info';
 
-    return axios.post(url, packedinfo)
+    return axios.post(url, packedInfo)
         .then(response => {
             return response.data;
         })
@@ -62,11 +60,11 @@ export async function getPaymentInfo() {
 
 }
 
-export async function sendUpdatePayment(packedinfo) {
+export async function sendUpdatePayment(packedInfo) {
 
     const url = '/api/user-info/update-credit-card-info';
 
-    return axios.post(url, packedinfo)
+    return axios.post(url, packedInfo)
         .then(response => {
             return response.data;
         })
