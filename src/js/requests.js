@@ -94,3 +94,14 @@ export async function getSalesOrderDetails(salesOrderID) {
             return response.json();
         })
 }
+
+export async function getCatalogue() {
+
+    const url = '/api/inventory/cars';
+
+    return fetch(url)
+        .then(response => {
+            return response.json();
+        })
+
+}

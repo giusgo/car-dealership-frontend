@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --foreground-bg: #6268B1;
+}
+
+@import "./header";
+@import "./line_decorators";
+@import "./footer";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+
+    .main__container {
+        width: 100vw;
+        overflow: hidden;
+
+        hr {
+            width: 70%;
+            border: 1px solid white;
+            margin: 60px auto;
+        }
+
+        // Catalogue
+        .catalogue {
+            margin: auto;
+            margin-top: 50px;
+            width: 70%;
+
+            h1 {
+                color: var(--foreground-bg);
+                font-size: 30px;
+                text-align: center;
+            }
+
+            .catalogue-list {
+                margin-top: 30px;
+                width: 100%;
+
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+
+                .item {
+                    width: 30%;
+                    margin-bottom: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    transition: ease .3s;
+
+                    &:hover {
+                        filter: brightness(150%); 
+                        transform: translateY(-5px);
+                    }
+
+                    .img {
+                        width: 100%;
+                        img {
+                            width: 100%;
+                            height: 200px;
+                            object-fit: cover;
+                            vertical-align: top;
+                        }
+                    }
+
+                    .name {
+                        width: 100%;
+                        height: 40px;
+                        background-color: var(--foreground-bg);
+
+                        p {
+                            color: white;
+                            font-weight: bold;
+                            font-size: 18px;
+                            text-align: left;
+                            line-height: 40px;
+                            padding-left: 30px;
+                        }
+                    }
+
+                    .price {
+                        width: 100%;
+                        height: 40px;
+                        background-color: white;
+
+                        p {
+                            color: gray;
+                            font-weight: bold;
+                            font-size: 18px;
+                            text-align: right;
+                            line-height: 40px;
+                            padding-right: 30px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+}
