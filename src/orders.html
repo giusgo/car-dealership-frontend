@@ -7,16 +7,14 @@
         <script src="https://kit.fontawesome.com/51a9d021a9.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
-        <link rel="stylesheet" href="scss/login.scss">
+        <link rel="stylesheet" href="scss/orders.scss">
         <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
 
-        <title>Login | Los Santos Customs</title>
-
+        <title>My orders | Los Santos Customs</title>
     </head>
     <body>
+
         <div class="main__container">
-
-
             <div class="line__decorator left">
                 <p>Los Santos custom</p>
                 <div class="line"></div>
@@ -71,36 +69,16 @@
                 </nav>
             </div>
 
+            <div class="orders">
 
-            <div class="login">
+                <h1>My orders</h1>
 
-                <h1>Login to your account</h1>
-
-                <div class="form">
-
-                    <div class="column">
-                        <div class="field">
-                            <label for="email">E-mail</label>
-                            <input type="text" name="email" id="email">
-                            <p id="email__error"></p>
-                        </div>
-
-                        <div class="field">
-                            <label for="password">Password</label>
-                            <input type="password" name="password" id="password">
-                            <p id="password__error"></p>
-                        </div>
-                    </div>
-
-                    <div id="send__login">
-                        Login
-                    </div>
-                    
-                </div>
+                <div class="orders__list" id="orders__list"></div>
 
             </div>
+
         </div>
 
-        <script src="./js/login.js" type="module"></script>
+        <script src="./js/orders.js" type="module"></script>
     </body>
 </html>

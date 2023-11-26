@@ -71,3 +71,26 @@ export async function sendUpdatePayment(packedInfo) {
         .catch(error => {throw error});
 
 }
+
+export async function getSalesOrderHeaders(userID) {
+
+    const url = '/api/sales-api/sales-order-header';
+    const urlWithParams = url + `?personID=${userID}`;
+
+    return fetch(urlWithParams)
+        .then(response => {
+            return response.json();
+        })
+
+}
+
+export async function getSalesOrderDetails(salesOrderID) {
+
+    const url = '/api/sales-api/sales-order-detail';  
+    const urlWithParams = url + `?salesOrderID=${salesOrderID}`;
+
+    return fetch(urlWithParams)
+        .then(response => {
+            return response.json();
+        })
+}

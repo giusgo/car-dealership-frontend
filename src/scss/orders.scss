@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --foreground-bg: #6268B1;
+}
+
+@import "./header";
+@import "./line_decorators";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+
+    .main__container {
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    // Orders
+
+    .orders {
+        margin: auto;
+        margin-top: 50px;
+        width: 70%;
+
+        h1 {
+            color: var(--foreground-bg);
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .orders__list {
+            width: 100%;
+            margin-top: 30px;
+
+            .order {
+                width: 100%;
+                padding: 20px;
+                background-color: #1a1a1a;
+                border-radius: 5px;
+                margin-bottom: 10px;
+                position: relative;
+                border-left: 5px solid var(--foreground-bg);
+
+                .order__header {
+                    width: 100%;
+                    display: flex;
+                    align-items: baseline;
+                    justify-content: space-between;
+                    color: white;
+                    padding: 5px;
+                    font-size: 14px;
+
+                    .order__number {
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        .tag {
+                            font-weight: bold;
+                        }
+                    }
+
+                    .tag {
+                        span {
+                            font-weight: bold;
+                        }
+                        .money {
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .products {
+                    color: white;
+                    font-weight: bold;
+                    margin: 10px 0;
+                }
+
+                .order__details {
+                    width: 100%;
+
+                    .order__detail {
+                        width: 100%;
+                        background-color: #262626;
+                        border-radius: 5px;
+                        margin: 5px 0;
+                        padding: 10px;
+
+                        .tag {
+                            color: white;
+                            margin: 2px 0;
+                            span {
+                                font-weight: bold;
+                            }
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
