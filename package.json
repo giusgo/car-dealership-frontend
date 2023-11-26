@@ -16,6 +16,7 @@
         "toastr": "^2.1.4"
     },
     "devDependencies": {
+        "@parcel/resolver-glob": "^2.10.3",
         "@parcel/transformer-sass": "^2.10.3",
         "buffer": "^6.0.3"
     }
