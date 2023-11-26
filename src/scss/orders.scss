@@ -62,6 +62,9 @@ body {
                     font-size: 14px;
 
                     .order__number {
+                        i {
+                            font-size: 26px;
+                        }
                         display: flex;
                         align-items: center;
                         gap: 5px;

@@ -67,7 +67,7 @@ async function getSalesOrdersWrapper() {
 
         const orderObject = createOrderObject(orderHeader.salesOrderNumber,
                                             orderHeader.salesOrderID,
-                                            orderHeader.orderDate,
+                                            orderHeader.orderDate.substring(0, 10),
                                             orderHeader.total,
                                             products);
 
