@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="https://kit.fontawesome.com/51a9d021a9.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+        <link rel="stylesheet" href="scss/customize.scss">
+        <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+
+        <title>Customize | Los Santos Customs</title>
+    </head>
+    <body>
+
+        <div class="main__container">
+
+            <div class="line__decorator left">
+                <p>Los Santos custom</p>
+                <div class="line"></div>
+            </div>
+            <div class="line__decorator right">
+                <div class="line"></div>
+                <p>Los Santos custom</p>
+            </div>
+
+            <div class="header">
+                <nav>
+                    <div class="nav__left">
+                        <div class="logo"><a href="."><img src="./assets/Los_Santos_Customs_logo.webp" alt="Los Santos custom logo"></a></div>
+                        <ul>
+                            <li><a href=".">Home</a></li>
+                            <li><a href="#about">About us</a></li>
+                            <li><a href="./catalogue">Catalogue</a></li>
+                            <li><a href="#contact">Contact us</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav__right">
+                        <!-- When not logged in -->
+                        <div class="loggedout" id="loggedout__buttons">
+                            <div class="button" id="register__button">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Register
+                            </div>
+                            <div class="button" id="login__button">
+                                <i class="fa-solid fa-user"></i>
+                                Login
+                            </div>
+                        </div>
+
+                        <!-- When logged in -->
+                        <div class="loggedin" id="loggedin__buttons">
+                            <div class="button" id="orders__button">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                                My orders
+                            </div>
+                            <div class="button" id="profile__button">
+                                <i class="fa-solid fa-user"></i>
+                                My profile
+                            </div>
+                            <div class="button" id="logout__button">
+                                <i class="fa-solid fa-right-to-bracket"></i>
+                                Logout
+                            </div>
+                        </div>
+
+
+                    </div>
+                </nav>
+            </div>
+
+            <div class="customize">
+
+                <h1>Customize your car</h1>
+
+                <div class="customizer">
+                    <div class="preview">
+
+                        <div class="img">
+                            <img id="preview-img">
+                        </div>
+
+                        <div class="mocker">
+                            <div class="name">
+                                <p id="car__name"></p>
+                            </div>
+                            <div class="price">
+                                <p id="car__price"></p>
+                            </div>
+                            <div class="buy__button" id="buy__button">Order</div>
+                        </div>
+
+                    </div>
+
+                    <div class="editor">
+                        <p class="instructions">Select a color</p>
+                        <div class="colors">
+                            <div class="color">
+                                <i class="fa-solid fa-check color-check"></i>
+                                <div class="bg blue"></div>
+                                <p>Blue</p>
+                            </div>
+                            <div class="color">
+                                <i class="fa-solid fa-check color-check"></i>
+                                <div class="bg red"></div>
+                                <p>Red</p>
+                            </div>
+                            <div class="color">
+                                <i class="fa-solid fa-check color-check"></i>
+                                <div class="bg yellow"></div>
+                                <p>Yellow</p>
+                            </div>
+                            <div class="color">
+                                <i class="fa-solid fa-check color-check"></i>
+                                <div class="bg green"></div>
+                                <p>Green</p>
+                            </div>
+                        </div>
+
+                        <p class="instructions">Select wheels</p>
+                        <div class="wheels" id="wheels">
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <script src="./js/customize.js" type="module"></script>
+    </body>
+</html>

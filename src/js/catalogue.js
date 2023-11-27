@@ -35,7 +35,7 @@ function customizeCar(car_model) {
     }
 
     // If logged in
-    window.location.href = `/customize?car_model=${car_model}`;
+    window.location.href = `/customize.html?car_model=${car_model}`;
 
 }
 

@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,400&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --foreground-bg: #6268B1;
+}
+
+@import "./header";
+@import "./line_decorators";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #000;
+
+    .main__container {
+        width: 100vw;
+        overflow: hidden;
+    }
+
+    .customize {
+        margin: auto;
+        margin-top: 50px;
+        width: 70%;
+
+        h1 {
+            color: var(--foreground-bg);
+            font-size: 30px;
+            text-align: center;
+        }
+
+        .customizer {
+            margin-top: 30px;
+            width: 100%;
+            
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+
+            .preview {
+                width: 70%;
+
+                .img {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                        border-radius: 5px;
+                    }
+                }
+
+                .mocker {
+                    width: 100%;
+
+                    .name {
+                        width: 100%;
+                        padding: 15px 0;
+                        p {
+                            color: white;
+                            font-size: 30px;
+                            font-weight: bold;
+                        }
+                    }
+
+                    .price {
+                        width: 100%;
+                        p {
+                            color: gray;
+                            font-size: 25px;
+                            font-weight: bold;
+                            text-align: right;
+                        }
+                    }
+
+                    .buy__button {
+                        background-color: var(--foreground-bg);
+                        color: white;
+                        font-weight: bold;
+                        text-align: center;
+                        padding: 10px;
+                        width: 100px;
+                        cursor: pointer;
+                        transition: ease .3s;
+                        border-radius: 5px;
+
+                        &:hover {
+                            background-color: white;
+                            color: var(--foreground-bg);
+                        }
+                    }
+                }
+            }
+
+            .editor {
+                width: 30%;
+
+                .instructions {
+                    font-weight: bold;
+                    color: white;
+                    font-size: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .colors {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    margin-bottom: 100px;
+
+                    .color {
+                        padding: 5px;
+                        width: 50%;
+                        height: 50px;
+                        margin-bottom: 40px;
+                        position: relative;
+                        //border: 1px solid white;
+
+                        .color-check {
+                            color: white;
+                            position: absolute;
+                            font-size: 40px;
+                            text-shadow: 4px 4px 20px #000000;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            display: none;
+                        }
+
+                        div {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 2px;
+                            cursor: pointer;
+                        }
+
+                        .blue {
+                            background-color: #1799E1;
+                        }
+
+                        .red {
+                            background-color: #BA3B3B;
+                        }
+
+                        .yellow {
+                            background-color: #DFD045;
+                        }
+
+                        .green {
+                            background-color: #5DC84C;
+                        }
+
+                        p {
+                            margin-top: 5px;
+                            color: white;
+                        }
+                    }
+                }
+
+                .wheels {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    .wheel {
+                        width: 50%;
+                        padding: 5px;
+                        cursor: pointer;
+                        position: relative;
+
+                        .wheel-check {
+                            color: white;
+                            position: absolute;
+                            font-size: 90px;
+                            top: 40%;
+                            text-shadow: 4px 4px 20px #000000;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+                            display: none;
+                        }
+
+                        img {
+                            width: 100%;
+                        }
+                        .name {
+                            margin-top: 5px;
+                            color: white;
+                        }
+                        .price {
+                            font-weight: bold;
+                            color: grey;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

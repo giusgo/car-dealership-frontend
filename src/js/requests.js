@@ -105,3 +105,29 @@ export async function getCatalogue() {
         })
 
 }
+
+export async function getCustomOptions(carModel) {
+
+    const url = '/api/inventory/cars';
+    const urlWithParams = url + `?custom=true&car=${carModel}`;
+
+    return fetch(urlWithParams)
+        .then(response => {
+            return response.json();
+        })
+
+}
+
+export async function generateOrder(userID) {
+
+    const url = '/api/sales-api/generate-sales-order';
+
+    console.log({personID: userID});
+
+    return axios.post(url, {personID: userID})
+        .then(response => {
+            return response.data;
+        })
+        .catch(error => {throw error});
+
+}
