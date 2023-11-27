@@ -6,7 +6,7 @@ import * as images from "../assets/car-imgs/*.png";
 import toastr from "./toastrConfig";
 
 function createWheelObject(rimName) {
-    let randomPrice = (Math.random() * (1000000 - 500000) + 500000).toFixed(2);
+    let randomPrice = (Math.random() * (1400 - 200) + 200).toFixed(2);
 
     const wheelObject = `
         <div class="wheel">
